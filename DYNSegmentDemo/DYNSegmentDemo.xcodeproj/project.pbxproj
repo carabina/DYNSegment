@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14EC1AB521853A1B00F1FFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14EC1AB421853A1B00F1FFBF /* Assets.xcassets */; };
+		14EC1AB821853A1B00F1FFBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EC1AB621853A1B00F1FFBF /* LaunchScreen.storyboard */; };
+		14EC1ABB21853A1B00F1FFBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1ABA21853A1B00F1FFBF /* main.m */; };
+		14EC1AE9218540CC00F1FFBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AE5218540CC00F1FFBF /* ViewController.m */; };
+		14EC1AEA218540CC00F1FFBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EC1AE6218540CC00F1FFBF /* Main.storyboard */; };
+		14EC1AEB218540CC00F1FFBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AE7218540CC00F1FFBF /* AppDelegate.m */; };
+		14EC1B3E2185416900F1FFBF /* DYNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AEF2185416900F1FFBF /* DYNAlertView.m */; };
+		14EC1B3F2185416900F1FFBF /* DYNMultiLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AF12185416900F1FFBF /* DYNMultiLabel.m */; };
+		14EC1B402185416900F1FFBF /* DYNWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AF42185416900F1FFBF /* DYNWebViewProgress.m */; };
+		14EC1B412185416900F1FFBF /* DYNLableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AF52185416900F1FFBF /* DYNLableButton.m */; };
+		14EC1B422185416900F1FFBF /* DYNCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AF82185416900F1FFBF /* DYNCheckBox.m */; };
+		14EC1B432185416900F1FFBF /* DYNSingleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AF92185416900F1FFBF /* DYNSingleLabel.m */; };
+		14EC1B442185416900F1FFBF /* DYNLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AFA2185416900F1FFBF /* DYNLoadingView.m */; };
+		14EC1B452185416900F1FFBF /* DYNWebErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AFB2185416900F1FFBF /* DYNWebErrorView.m */; };
+		14EC1B462185416900F1FFBF /* DYNImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AFC2185416900F1FFBF /* DYNImageButton.m */; };
+		14EC1B472185416900F1FFBF /* DYNHint.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AFD2185416900F1FFBF /* DYNHint.m */; };
+		14EC1B482185416900F1FFBF /* DYNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1AFE2185416900F1FFBF /* DYNLine.m */; };
+		14EC1B492185416900F1FFBF /* DYNCheckBox1.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B002185416900F1FFBF /* DYNCheckBox1.m */; };
+		14EC1B4A2185416900F1FFBF /* DYNWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B032185416900F1FFBF /* DYNWebViewProgressView.m */; };
+		14EC1B4B2185416900F1FFBF /* DYNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B042185416900F1FFBF /* DYNTextField.m */; };
+		14EC1B4C2185416900F1FFBF /* UIScreen+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B0D2185416900F1FFBF /* UIScreen+DYN.m */; };
+		14EC1B4D2185416900F1FFBF /* NSData+DYNBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B102185416900F1FFBF /* NSData+DYNBase64.m */; };
+		14EC1B4E2185416900F1FFBF /* UIImage+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B132185416900F1FFBF /* UIImage+DYN.m */; };
+		14EC1B4F2185416900F1FFBF /* UIViewController+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B142185416900F1FFBF /* UIViewController+DYN.m */; };
+		14EC1B502185416900F1FFBF /* NSString+DYNBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B182185416900F1FFBF /* NSString+DYNBase64.m */; };
+		14EC1B512185416900F1FFBF /* UIWebView+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B192185416900F1FFBF /* UIWebView+DYN.m */; };
+		14EC1B522185416900F1FFBF /* UIView+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B1A2185416900F1FFBF /* UIView+DYN.m */; };
+		14EC1B532185416900F1FFBF /* NSString+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B1B2185416900F1FFBF /* NSString+DYN.m */; };
+		14EC1B542185416900F1FFBF /* UIColor+DYN.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B1C2185416900F1FFBF /* UIColor+DYN.m */; };
+		14EC1B552185416900F1FFBF /* DYNLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B252185416900F1FFBF /* DYNLogManager.m */; };
+		14EC1B562185416900F1FFBF /* DYNResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B282185416900F1FFBF /* DYNResponse.m */; };
+		14EC1B572185416900F1FFBF /* DYNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B2E2185416900F1FFBF /* DYNTimer.m */; };
+		14EC1B582185416900F1FFBF /* DYNUrlSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B312185416900F1FFBF /* DYNUrlSession.m */; };
+		14EC1B592185416900F1FFBF /* DYNGeneralStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B342185416900F1FFBF /* DYNGeneralStorage.m */; };
+		14EC1B5A2185416900F1FFBF /* DYNUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B362185416900F1FFBF /* DYNUtils.m */; };
+		14EC1B5B2185416900F1FFBF /* DYNDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B372185416900F1FFBF /* DYNDeviceInfo.m */; };
+		14EC1B5C2185416900F1FFBF /* DYNUserStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B382185416900F1FFBF /* DYNUserStorage.m */; };
+		14EC1B5D2185416900F1FFBF /* DYNRSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B392185416900F1FFBF /* DYNRSAUtil.m */; };
+		14EC1B5E2185416900F1FFBF /* DYNDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B3A2185416900F1FFBF /* DYNDBHelper.m */; };
+		14EC1B5F2185416900F1FFBF /* DYNStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B3B2185416900F1FFBF /* DYNStorage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14EC1AA821853A1800F1FFBF /* DYNSegmentDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYNSegmentDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14EC1AB421853A1B00F1FFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14EC1AB721853A1B00F1FFBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14EC1AB921853A1B00F1FFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14EC1ABA21853A1B00F1FFBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14EC1AE4218540CC00F1FFBF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14EC1AE5218540CC00F1FFBF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		14EC1AE6218540CC00F1FFBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		14EC1AE7218540CC00F1FFBF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14EC1AE8218540CC00F1FFBF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		14EC1AEF2185416900F1FFBF /* DYNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNAlertView.m; sourceTree = "<group>"; };
+		14EC1AF02185416900F1FFBF /* DYNLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNLine.h; sourceTree = "<group>"; };
+		14EC1AF12185416900F1FFBF /* DYNMultiLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNMultiLabel.m; sourceTree = "<group>"; };
+		14EC1AF22185416900F1FFBF /* DYNTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNTextField.h; sourceTree = "<group>"; };
+		14EC1AF32185416900F1FFBF /* DYNWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNWebViewProgressView.h; sourceTree = "<group>"; };
+		14EC1AF42185416900F1FFBF /* DYNWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNWebViewProgress.m; sourceTree = "<group>"; };
+		14EC1AF52185416900F1FFBF /* DYNLableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNLableButton.m; sourceTree = "<group>"; };
+		14EC1AF62185416900F1FFBF /* DYNCheckBox1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNCheckBox1.h; sourceTree = "<group>"; };
+		14EC1AF72185416900F1FFBF /* DYNWebViewProgressViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNWebViewProgressViewProtocol.h; sourceTree = "<group>"; };
+		14EC1AF82185416900F1FFBF /* DYNCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNCheckBox.m; sourceTree = "<group>"; };
+		14EC1AF92185416900F1FFBF /* DYNSingleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNSingleLabel.m; sourceTree = "<group>"; };
+		14EC1AFA2185416900F1FFBF /* DYNLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNLoadingView.m; sourceTree = "<group>"; };
+		14EC1AFB2185416900F1FFBF /* DYNWebErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNWebErrorView.m; sourceTree = "<group>"; };
+		14EC1AFC2185416900F1FFBF /* DYNImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNImageButton.m; sourceTree = "<group>"; };
+		14EC1AFD2185416900F1FFBF /* DYNHint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNHint.m; sourceTree = "<group>"; };
+		14EC1AFE2185416900F1FFBF /* DYNLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNLine.m; sourceTree = "<group>"; };
+		14EC1AFF2185416900F1FFBF /* DYNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNAlertView.h; sourceTree = "<group>"; };
+		14EC1B002185416900F1FFBF /* DYNCheckBox1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNCheckBox1.m; sourceTree = "<group>"; };
+		14EC1B012185416900F1FFBF /* DYNLableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNLableButton.h; sourceTree = "<group>"; };
+		14EC1B022185416900F1FFBF /* DYNWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNWebViewProgress.h; sourceTree = "<group>"; };
+		14EC1B032185416900F1FFBF /* DYNWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNWebViewProgressView.m; sourceTree = "<group>"; };
+		14EC1B042185416900F1FFBF /* DYNTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNTextField.m; sourceTree = "<group>"; };
+		14EC1B052185416900F1FFBF /* DYNMultiLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNMultiLabel.h; sourceTree = "<group>"; };
+		14EC1B062185416900F1FFBF /* DYNSingleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNSingleLabel.h; sourceTree = "<group>"; };
+		14EC1B072185416900F1FFBF /* DYNCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNCheckBox.h; sourceTree = "<group>"; };
+		14EC1B082185416900F1FFBF /* DYNHint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNHint.h; sourceTree = "<group>"; };
+		14EC1B092185416900F1FFBF /* DYNWebErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNWebErrorView.h; sourceTree = "<group>"; };
+		14EC1B0A2185416900F1FFBF /* DYNImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNImageButton.h; sourceTree = "<group>"; };
+		14EC1B0B2185416900F1FFBF /* DYNLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNLoadingView.h; sourceTree = "<group>"; };
+		14EC1B0D2185416900F1FFBF /* UIScreen+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+DYN.m"; sourceTree = "<group>"; };
+		14EC1B0E2185416900F1FFBF /* UIWebView+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DYN.h"; sourceTree = "<group>"; };
+		14EC1B0F2185416900F1FFBF /* NSString+DYNBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DYNBase64.h"; sourceTree = "<group>"; };
+		14EC1B102185416900F1FFBF /* NSData+DYNBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DYNBase64.m"; sourceTree = "<group>"; };
+		14EC1B112185416900F1FFBF /* NSString+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DYN.h"; sourceTree = "<group>"; };
+		14EC1B122185416900F1FFBF /* UIView+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DYN.h"; sourceTree = "<group>"; };
+		14EC1B132185416900F1FFBF /* UIImage+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DYN.m"; sourceTree = "<group>"; };
+		14EC1B142185416900F1FFBF /* UIViewController+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DYN.m"; sourceTree = "<group>"; };
+		14EC1B152185416900F1FFBF /* UIColor+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DYN.h"; sourceTree = "<group>"; };
+		14EC1B162185416900F1FFBF /* UIScreen+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+DYN.h"; sourceTree = "<group>"; };
+		14EC1B172185416900F1FFBF /* NSData+DYNBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DYNBase64.h"; sourceTree = "<group>"; };
+		14EC1B182185416900F1FFBF /* NSString+DYNBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DYNBase64.m"; sourceTree = "<group>"; };
+		14EC1B192185416900F1FFBF /* UIWebView+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DYN.m"; sourceTree = "<group>"; };
+		14EC1B1A2185416900F1FFBF /* UIView+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYN.m"; sourceTree = "<group>"; };
+		14EC1B1B2185416900F1FFBF /* NSString+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DYN.m"; sourceTree = "<group>"; };
+		14EC1B1C2185416900F1FFBF /* UIColor+DYN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DYN.m"; sourceTree = "<group>"; };
+		14EC1B1D2185416900F1FFBF /* UIViewController+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DYN.h"; sourceTree = "<group>"; };
+		14EC1B1E2185416900F1FFBF /* UIImage+DYN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DYN.h"; sourceTree = "<group>"; };
+		14EC1B202185416900F1FFBF /* DYNMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNMacro.h; sourceTree = "<group>"; };
+		14EC1B232185416900F1FFBF /* DYNViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNViewProtocol.h; sourceTree = "<group>"; };
+		14EC1B252185416900F1FFBF /* DYNLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNLogManager.m; sourceTree = "<group>"; };
+		14EC1B262185416900F1FFBF /* DYNLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNLogManager.h; sourceTree = "<group>"; };
+		14EC1B282185416900F1FFBF /* DYNResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNResponse.m; sourceTree = "<group>"; };
+		14EC1B292185416900F1FFBF /* DYNResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNResponse.h; sourceTree = "<group>"; };
+		14EC1B2C2185416900F1FFBF /* DYNDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNDeviceInfo.h; sourceTree = "<group>"; };
+		14EC1B2D2185416900F1FFBF /* DYNUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNUtils.h; sourceTree = "<group>"; };
+		14EC1B2E2185416900F1FFBF /* DYNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNTimer.m; sourceTree = "<group>"; };
+		14EC1B2F2185416900F1FFBF /* DYNRSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNRSAUtil.h; sourceTree = "<group>"; };
+		14EC1B302185416900F1FFBF /* DYNUserStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNUserStorage.h; sourceTree = "<group>"; };
+		14EC1B312185416900F1FFBF /* DYNUrlSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNUrlSession.m; sourceTree = "<group>"; };
+		14EC1B322185416900F1FFBF /* DYNStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNStorage.h; sourceTree = "<group>"; };
+		14EC1B332185416900F1FFBF /* DYNDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNDBHelper.h; sourceTree = "<group>"; };
+		14EC1B342185416900F1FFBF /* DYNGeneralStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNGeneralStorage.m; sourceTree = "<group>"; };
+		14EC1B352185416900F1FFBF /* DYNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNTimer.h; sourceTree = "<group>"; };
+		14EC1B362185416900F1FFBF /* DYNUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNUtils.m; sourceTree = "<group>"; };
+		14EC1B372185416900F1FFBF /* DYNDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNDeviceInfo.m; sourceTree = "<group>"; };
+		14EC1B382185416900F1FFBF /* DYNUserStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNUserStorage.m; sourceTree = "<group>"; };
+		14EC1B392185416900F1FFBF /* DYNRSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNRSAUtil.m; sourceTree = "<group>"; };
+		14EC1B3A2185416900F1FFBF /* DYNDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNDBHelper.m; sourceTree = "<group>"; };
+		14EC1B3B2185416900F1FFBF /* DYNStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNStorage.m; sourceTree = "<group>"; };
+		14EC1B3C2185416900F1FFBF /* DYNUrlSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNUrlSession.h; sourceTree = "<group>"; };
+		14EC1B3D2185416900F1FFBF /* DYNGeneralStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNGeneralStorage.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14EC1AA521853A1800F1FFBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14EC1A9F21853A1800F1FFBF = {
+			isa = PBXGroup;
+			children = (
+				14EC1AEC2185416900F1FFBF /* DYNCore */,
+				14EC1AE3218540CC00F1FFBF /* TestUI */,
+				14EC1AAA21853A1800F1FFBF /* DYNSegmentDemo */,
+				14EC1AA921853A1800F1FFBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14EC1AA921853A1800F1FFBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1AA821853A1800F1FFBF /* DYNSegmentDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14EC1AAA21853A1800F1FFBF /* DYNSegmentDemo */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1AB421853A1B00F1FFBF /* Assets.xcassets */,
+				14EC1AB621853A1B00F1FFBF /* LaunchScreen.storyboard */,
+				14EC1AB921853A1B00F1FFBF /* Info.plist */,
+				14EC1ABA21853A1B00F1FFBF /* main.m */,
+			);
+			path = DYNSegmentDemo;
+			sourceTree = "<group>";
+		};
+		14EC1AE3218540CC00F1FFBF /* TestUI */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1AE4218540CC00F1FFBF /* AppDelegate.h */,
+				14EC1AE5218540CC00F1FFBF /* ViewController.m */,
+				14EC1AE6218540CC00F1FFBF /* Main.storyboard */,
+				14EC1AE7218540CC00F1FFBF /* AppDelegate.m */,
+				14EC1AE8218540CC00F1FFBF /* ViewController.h */,
+			);
+			path = TestUI;
+			sourceTree = "<group>";
+		};
+		14EC1AEC2185416900F1FFBF /* DYNCore */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1AED2185416900F1FFBF /* Page */,
+				14EC1AEE2185416900F1FFBF /* Widget */,
+				14EC1B0C2185416900F1FFBF /* Category */,
+				14EC1B1F2185416900F1FFBF /* Config */,
+				14EC1B212185416900F1FFBF /* Third */,
+				14EC1B222185416900F1FFBF /* Protocol */,
+				14EC1B242185416900F1FFBF /* Manager */,
+				14EC1B272185416900F1FFBF /* Model */,
+				14EC1B2A2185416900F1FFBF /* View */,
+				14EC1B2B2185416900F1FFBF /* Helper */,
+			);
+			name = DYNCore;
+			path = ../../DYNCore/DYNCore;
+			sourceTree = "<group>";
+		};
+		14EC1AED2185416900F1FFBF /* Page */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		14EC1AEE2185416900F1FFBF /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1AEF2185416900F1FFBF /* DYNAlertView.m */,
+				14EC1AF02185416900F1FFBF /* DYNLine.h */,
+				14EC1AF12185416900F1FFBF /* DYNMultiLabel.m */,
+				14EC1AF22185416900F1FFBF /* DYNTextField.h */,
+				14EC1AF32185416900F1FFBF /* DYNWebViewProgressView.h */,
+				14EC1AF42185416900F1FFBF /* DYNWebViewProgress.m */,
+				14EC1AF52185416900F1FFBF /* DYNLableButton.m */,
+				14EC1AF62185416900F1FFBF /* DYNCheckBox1.h */,
+				14EC1AF72185416900F1FFBF /* DYNWebViewProgressViewProtocol.h */,
+				14EC1AF82185416900F1FFBF /* DYNCheckBox.m */,
+				14EC1AF92185416900F1FFBF /* DYNSingleLabel.m */,
+				14EC1AFA2185416900F1FFBF /* DYNLoadingView.m */,
+				14EC1AFB2185416900F1FFBF /* DYNWebErrorView.m */,
+				14EC1AFC2185416900F1FFBF /* DYNImageButton.m */,
+				14EC1AFD2185416900F1FFBF /* DYNHint.m */,
+				14EC1AFE2185416900F1FFBF /* DYNLine.m */,
+				14EC1AFF2185416900F1FFBF /* DYNAlertView.h */,
+				14EC1B002185416900F1FFBF /* DYNCheckBox1.m */,
+				14EC1B012185416900F1FFBF /* DYNLableButton.h */,
+				14EC1B022185416900F1FFBF /* DYNWebViewProgress.h */,
+				14EC1B032185416900F1FFBF /* DYNWebViewProgressView.m */,
+				14EC1B042185416900F1FFBF /* DYNTextField.m */,
+				14EC1B052185416900F1FFBF /* DYNMultiLabel.h */,
+				14EC1B062185416900F1FFBF /* DYNSingleLabel.h */,
+				14EC1B072185416900F1FFBF /* DYNCheckBox.h */,
+				14EC1B082185416900F1FFBF /* DYNHint.h */,
+				14EC1B092185416900F1FFBF /* DYNWebErrorView.h */,
+				14EC1B0A2185416900F1FFBF /* DYNImageButton.h */,
+				14EC1B0B2185416900F1FFBF /* DYNLoadingView.h */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		14EC1B0C2185416900F1FFBF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B0D2185416900F1FFBF /* UIScreen+DYN.m */,
+				14EC1B0E2185416900F1FFBF /* UIWebView+DYN.h */,
+				14EC1B0F2185416900F1FFBF /* NSString+DYNBase64.h */,
+				14EC1B102185416900F1FFBF /* NSData+DYNBase64.m */,
+				14EC1B112185416900F1FFBF /* NSString+DYN.h */,
+				14EC1B122185416900F1FFBF /* UIView+DYN.h */,
+				14EC1B132185416900F1FFBF /* UIImage+DYN.m */,
+				14EC1B142185416900F1FFBF /* UIViewController+DYN.m */,
+				14EC1B152185416900F1FFBF /* UIColor+DYN.h */,
+				14EC1B162185416900F1FFBF /* UIScreen+DYN.h */,
+				14EC1B172185416900F1FFBF /* NSData+DYNBase64.h */,
+				14EC1B182185416900F1FFBF /* NSString+DYNBase64.m */,
+				14EC1B192185416900F1FFBF /* UIWebView+DYN.m */,
+				14EC1B1A2185416900F1FFBF /* UIView+DYN.m */,
+				14EC1B1B2185416900F1FFBF /* NSString+DYN.m */,
+				14EC1B1C2185416900F1FFBF /* UIColor+DYN.m */,
+				14EC1B1D2185416900F1FFBF /* UIViewController+DYN.h */,
+				14EC1B1E2185416900F1FFBF /* UIImage+DYN.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		14EC1B1F2185416900F1FFBF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B202185416900F1FFBF /* DYNMacro.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		14EC1B212185416900F1FFBF /* Third */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		14EC1B222185416900F1FFBF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B232185416900F1FFBF /* DYNViewProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		14EC1B242185416900F1FFBF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B252185416900F1FFBF /* DYNLogManager.m */,
+				14EC1B262185416900F1FFBF /* DYNLogManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		14EC1B272185416900F1FFBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B282185416900F1FFBF /* DYNResponse.m */,
+				14EC1B292185416900F1FFBF /* DYNResponse.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14EC1B2A2185416900F1FFBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14EC1B2B2185416900F1FFBF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B2C2185416900F1FFBF /* DYNDeviceInfo.h */,
+				14EC1B2D2185416900F1FFBF /* DYNUtils.h */,
+				14EC1B2E2185416900F1FFBF /* DYNTimer.m */,
+				14EC1B2F2185416900F1FFBF /* DYNRSAUtil.h */,
+				14EC1B302185416900F1FFBF /* DYNUserStorage.h */,
+				14EC1B312185416900F1FFBF /* DYNUrlSession.m */,
+				14EC1B322185416900F1FFBF /* DYNStorage.h */,
+				14EC1B332185416900F1FFBF /* DYNDBHelper.h */,
+				14EC1B342185416900F1FFBF /* DYNGeneralStorage.m */,
+				14EC1B352185416900F1FFBF /* DYNTimer.h */,
+				14EC1B362185416900F1FFBF /* DYNUtils.m */,
+				14EC1B372185416900F1FFBF /* DYNDeviceInfo.m */,
+				14EC1B382185416900F1FFBF /* DYNUserStorage.m */,
+				14EC1B392185416900F1FFBF /* DYNRSAUtil.m */,
+				14EC1B3A2185416900F1FFBF /* DYNDBHelper.m */,
+				14EC1B3B2185416900F1FFBF /* DYNStorage.m */,
+				14EC1B3C2185416900F1FFBF /* DYNUrlSession.h */,
+				14EC1B3D2185416900F1FFBF /* DYNGeneralStorage.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14EC1AA721853A1800F1FFBF /* DYNSegmentDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14EC1ABE21853A1B00F1FFBF /* Build configuration list for PBXNativeTarget "DYNSegmentDemo" */;
+			buildPhases = (
+				14EC1AA421853A1800F1FFBF /* Sources */,
+				14EC1AA521853A1800F1FFBF /* Frameworks */,
+				14EC1AA621853A1800F1FFBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DYNSegmentDemo;
+			productName = DYNSegmentDemo;
+			productReference = 14EC1AA821853A1800F1FFBF /* DYNSegmentDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14EC1AA021853A1800F1FFBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = devyuan;
+				TargetAttributes = {
+					14EC1AA721853A1800F1FFBF = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = 14EC1AA321853A1800F1FFBF /* Build configuration list for PBXProject "DYNSegmentDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14EC1A9F21853A1800F1FFBF;
+			productRefGroup = 14EC1AA921853A1800F1FFBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14EC1AA721853A1800F1FFBF /* DYNSegmentDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14EC1AA621853A1800F1FFBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14EC1AEA218540CC00F1FFBF /* Main.storyboard in Resources */,
+				14EC1AB821853A1B00F1FFBF /* LaunchScreen.storyboard in Resources */,
+				14EC1AB521853A1B00F1FFBF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14EC1AA421853A1800F1FFBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14EC1B572185416900F1FFBF /* DYNTimer.m in Sources */,
+				14EC1B5D2185416900F1FFBF /* DYNRSAUtil.m in Sources */,
+				14EC1B5A2185416900F1FFBF /* DYNUtils.m in Sources */,
+				14EC1B432185416900F1FFBF /* DYNSingleLabel.m in Sources */,
+				14EC1B462185416900F1FFBF /* DYNImageButton.m in Sources */,
+				14EC1B502185416900F1FFBF /* NSString+DYNBase64.m in Sources */,
+				14EC1B5F2185416900F1FFBF /* DYNStorage.m in Sources */,
+				14EC1B402185416900F1FFBF /* DYNWebViewProgress.m in Sources */,
+				14EC1B592185416900F1FFBF /* DYNGeneralStorage.m in Sources */,
+				14EC1B552185416900F1FFBF /* DYNLogManager.m in Sources */,
+				14EC1AE9218540CC00F1FFBF /* ViewController.m in Sources */,
+				14EC1B422185416900F1FFBF /* DYNCheckBox.m in Sources */,
+				14EC1B522185416900F1FFBF /* UIView+DYN.m in Sources */,
+				14EC1B5B2185416900F1FFBF /* DYNDeviceInfo.m in Sources */,
+				14EC1B3F2185416900F1FFBF /* DYNMultiLabel.m in Sources */,
+				14EC1B442185416900F1FFBF /* DYNLoadingView.m in Sources */,
+				14EC1B542185416900F1FFBF /* UIColor+DYN.m in Sources */,
+				14EC1B4A2185416900F1FFBF /* DYNWebViewProgressView.m in Sources */,
+				14EC1B512185416900F1FFBF /* UIWebView+DYN.m in Sources */,
+				14EC1B582185416900F1FFBF /* DYNUrlSession.m in Sources */,
+				14EC1B472185416900F1FFBF /* DYNHint.m in Sources */,
+				14EC1ABB21853A1B00F1FFBF /* main.m in Sources */,
+				14EC1AEB218540CC00F1FFBF /* AppDelegate.m in Sources */,
+				14EC1B412185416900F1FFBF /* DYNLableButton.m in Sources */,
+				14EC1B482185416900F1FFBF /* DYNLine.m in Sources */,
+				14EC1B492185416900F1FFBF /* DYNCheckBox1.m in Sources */,
+				14EC1B532185416900F1FFBF /* NSString+DYN.m in Sources */,
+				14EC1B3E2185416900F1FFBF /* DYNAlertView.m in Sources */,
+				14EC1B5C2185416900F1FFBF /* DYNUserStorage.m in Sources */,
+				14EC1B452185416900F1FFBF /* DYNWebErrorView.m in Sources */,
+				14EC1B562185416900F1FFBF /* DYNResponse.m in Sources */,
+				14EC1B4B2185416900F1FFBF /* DYNTextField.m in Sources */,
+				14EC1B4C2185416900F1FFBF /* UIScreen+DYN.m in Sources */,
+				14EC1B4D2185416900F1FFBF /* NSData+DYNBase64.m in Sources */,
+				14EC1B5E2185416900F1FFBF /* DYNDBHelper.m in Sources */,
+				14EC1B4F2185416900F1FFBF /* UIViewController+DYN.m in Sources */,
+				14EC1B4E2185416900F1FFBF /* UIImage+DYN.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14EC1AB621853A1B00F1FFBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14EC1AB721853A1B00F1FFBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14EC1ABC21853A1B00F1FFBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		14EC1ABD21853A1B00F1FFBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14EC1ABF21853A1B00F1FFBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DYNSegmentDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devyuan.DYNSegmentDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14EC1AC021853A1B00F1FFBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DYNSegmentDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devyuan.DYNSegmentDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14EC1AA321853A1800F1FFBF /* Build configuration list for PBXProject "DYNSegmentDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14EC1ABC21853A1B00F1FFBF /* Debug */,
+				14EC1ABD21853A1B00F1FFBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14EC1ABE21853A1B00F1FFBF /* Build configuration list for PBXNativeTarget "DYNSegmentDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14EC1ABF21853A1B00F1FFBF /* Debug */,
+				14EC1AC021853A1B00F1FFBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14EC1AA021853A1800F1FFBF /* Project object */;
+}
