@@ -47,6 +47,8 @@
 		14EC1B5D2185416900F1FFBF /* DYNRSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B392185416900F1FFBF /* DYNRSAUtil.m */; };
 		14EC1B5E2185416900F1FFBF /* DYNDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B3A2185416900F1FFBF /* DYNDBHelper.m */; };
 		14EC1B5F2185416900F1FFBF /* DYNStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B3B2185416900F1FFBF /* DYNStorage.m */; };
+		14EC1B632185E08A00F1FFBF /* DYNSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B622185E08A00F1FFBF /* DYNSegmentView.m */; };
+		14EC1B662185E25A00F1FFBF /* DYNSegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC1B652185E25A00F1FFBF /* DYNSegmentItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,10 @@
 		14EC1B3B2185416900F1FFBF /* DYNStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNStorage.m; sourceTree = "<group>"; };
 		14EC1B3C2185416900F1FFBF /* DYNUrlSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNUrlSession.h; sourceTree = "<group>"; };
 		14EC1B3D2185416900F1FFBF /* DYNGeneralStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNGeneralStorage.h; sourceTree = "<group>"; };
+		14EC1B612185E08A00F1FFBF /* DYNSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYNSegmentView.h; sourceTree = "<group>"; };
+		14EC1B622185E08A00F1FFBF /* DYNSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYNSegmentView.m; sourceTree = "<group>"; };
+		14EC1B642185E25A00F1FFBF /* DYNSegmentItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYNSegmentItem.h; sourceTree = "<group>"; };
+		14EC1B652185E25A00F1FFBF /* DYNSegmentItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYNSegmentItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		14EC1A9F21853A1800F1FFBF = {
 			isa = PBXGroup;
 			children = (
+				14EC1B602185437900F1FFBF /* DYNSegment */,
 				14EC1AEC2185416900F1FFBF /* DYNCore */,
 				14EC1AE3218540CC00F1FFBF /* TestUI */,
 				14EC1AAA21853A1800F1FFBF /* DYNSegmentDemo */,
@@ -344,6 +351,18 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		14EC1B602185437900F1FFBF /* DYNSegment */ = {
+			isa = PBXGroup;
+			children = (
+				14EC1B612185E08A00F1FFBF /* DYNSegmentView.h */,
+				14EC1B622185E08A00F1FFBF /* DYNSegmentView.m */,
+				14EC1B642185E25A00F1FFBF /* DYNSegmentItem.h */,
+				14EC1B652185E25A00F1FFBF /* DYNSegmentItem.m */,
+			);
+			name = DYNSegment;
+			path = ../DYNSegment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,8 +467,10 @@
 				14EC1B4B2185416900F1FFBF /* DYNTextField.m in Sources */,
 				14EC1B4C2185416900F1FFBF /* UIScreen+DYN.m in Sources */,
 				14EC1B4D2185416900F1FFBF /* NSData+DYNBase64.m in Sources */,
+				14EC1B662185E25A00F1FFBF /* DYNSegmentItem.m in Sources */,
 				14EC1B5E2185416900F1FFBF /* DYNDBHelper.m in Sources */,
 				14EC1B4F2185416900F1FFBF /* UIViewController+DYN.m in Sources */,
+				14EC1B632185E08A00F1FFBF /* DYNSegmentView.m in Sources */,
 				14EC1B4E2185416900F1FFBF /* UIImage+DYN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
