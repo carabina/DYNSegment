@@ -13,5 +13,7 @@
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, strong) UIColor *titleColor;
 
 @end

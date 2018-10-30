@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DYNSegmentView.h"
 
-@interface ViewController ()
+@interface ViewController () <DYNSegmentViewDelegate>
 - (IBAction)btn0Action:(id)sender;
 - (IBAction)btn1Action:(id)sender;
 - (IBAction)btn2Action:(id)sender;
@@ -21,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    DYNSegmentView *segView = [[DYNSegmentView alloc] initWithFrame:self.view.bounds delegate:self];
+    [self.view addSubview:segView];
 }
 
 
@@ -30,6 +33,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+# pragma mark - delegate
+- (NSInteger)dynSegmentItemCount {
+    return 6;
+}
+
+- (CGFloat)dynSegmentItemHeight {
+    return 50;
+}
+
+- (DYNSegmentItem*)dynSegmentItemAtIndex:(NSInteger)index {
+    return nil;
+}
+
+- (UIViewController*)dynSegmentPageAtIndex:(NSInteger)index {
+    return nil;
+}
+
+#pragma mark - action
 
 - (IBAction)btn0Action:(id)sender {
 

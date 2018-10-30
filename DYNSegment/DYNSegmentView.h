@@ -14,12 +14,15 @@
 
 @protocol DYNSegmentViewDelegate
 
-- (NSInteger)dynSegmentView:(DYNSegmentView*)segmentView itemCount:(NSInteger)itemCount;
-- (DYNSegmentItem*)dynSegmentView:(DYNSegmentView*)segmentView itemAtIndex:(NSInteger)index;
-- (UIViewController*)dynSegmentView:(DYNSegmentView*)segmentView pageAtIndex:(NSInteger)index;
+- (NSInteger)dynSegmentItemCount;
+- (CGFloat)dynSegmentItemHeight;
+- (DYNSegmentItem*)dynSegmentItemAtIndex:(NSInteger)index;
+- (UIViewController*)dynSegmentPageAtIndex:(NSInteger)index;
 
 @end
 
 @interface DYNSegmentView : UIView <DYNViewProtocol>
+
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id<DYNSegmentViewDelegate>)delegate;
 
 @end

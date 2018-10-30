@@ -184,10 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				14EC1AE4218540CC00F1FFBF /* AppDelegate.h */,
-				14EC1AE5218540CC00F1FFBF /* ViewController.m */,
-				14EC1AE6218540CC00F1FFBF /* Main.storyboard */,
 				14EC1AE7218540CC00F1FFBF /* AppDelegate.m */,
+				14EC1AE6218540CC00F1FFBF /* Main.storyboard */,
 				14EC1AE8218540CC00F1FFBF /* ViewController.h */,
+				14EC1AE5218540CC00F1FFBF /* ViewController.m */,
 			);
 			path = TestUI;
 			sourceTree = "<group>";

@@ -7,12 +7,18 @@
 //
 
 #import "DYNSegmentItem.h"
+#import "DYNMacro.h"
+#import "DYNSingleLabel.h"
 
 @interface DYNSegmentItem()
+
+@property (nonatomic, strong) DYNSingleLabel *titleLabel;
 
 @end
 
 @implementation DYNSegmentItem
+
+#pragma mark - public
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -23,19 +29,56 @@
 }
 
 - (void)setupViews {
+    _contentView = [[UIView alloc] init];
+    [self addSubview:_contentView];
     
+    _titleLabel = [[DYNSingleLabel alloc] init];
+    [self addSubview:_titleLabel];
+}
+
+#pragma mark - private
+
+#pragma mark - override
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    _contentView.frame = self.bounds;
+    
+    _titleLabel.frameCenterX = DYNRulerViewWidth(self, 0.5);
+    _titleLabel.frameCenterY = DYNRulerViewHeight(self, 0.5);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    [super touchesEnded:touches withEvent:event];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+}
+
+#pragma mark - getter setter
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    _titleLabel.textString = title;
+}
+
+- (void)setTitleFont:(UIFont *)titleFont {
+    _titleFont = titleFont;
+    _titleLabel.font = titleFont;
+}
+
+- (void)setTitleColor:(UIColor *)titleColor {
+    _titleColor = titleColor;
+    _titleLabel.textColor = titleColor;
 }
 
 @end
