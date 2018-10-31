@@ -14,15 +14,20 @@
 
 @protocol DYNSegmentViewDelegate
 
-- (NSInteger)dynSegmentItemCount;
-- (CGFloat)dynSegmentItemHeight;
-- (DYNSegmentItem*)dynSegmentItemAtIndex:(NSInteger)index;
+//- (NSInteger)dynSegmentItemCount;
+//- (CGFloat)dynSegmentItemHeight;
+//- (DYNSegmentItem*)dynSegmentItemAtIndex:(NSInteger)index;
 - (UIViewController*)dynSegmentPageAtIndex:(NSInteger)index;
 
 @end
 
 @interface DYNSegmentView : UIView <DYNViewProtocol>
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id<DYNSegmentViewDelegate>)delegate;
+@property (nonatomic, copy) NSArray<DYNSegmentItem*> *items;
+@property (nonatomic, assign) CGFloat segmentHeight;
+@property (nonatomic, strong) UIColor *segmentColor;
+@property (nonatomic, weak) id<DYNSegmentViewDelegate> delegate;
+
+//- (instancetype)initWithFrame:(CGRect)frame delegate:(id<DYNSegmentViewDelegate>)delegate;
 
 @end

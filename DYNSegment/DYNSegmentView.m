@@ -11,19 +11,16 @@
 
 @interface DYNSegmentView()
 
-@property (nonatomic, weak) id<DYNSegmentViewDelegate> delegate;
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, assign) CGFloat itemWidth;
 
 @end
 
 @implementation DYNSegmentView
 
-- (instancetype)initWithFrame:(CGRect)frame delegate:(id<DYNSegmentViewDelegate>)delegate {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _delegate = delegate;
         [self setupViews];
     }
     return self;
@@ -33,30 +30,54 @@
     self.backgroundColor = [UIColor redColor];
     
     _scrollerView = [[UIScrollView alloc] init];
-    _scrollerView.backgroundColor = [UIColor blueColor];
     _scrollerView.bounces = NO;
     _scrollerView.showsHorizontalScrollIndicator = NO;
     _scrollerView.showsVerticalScrollIndicator = NO;
     [self addSubview:_scrollerView];
-    
-    for(NSInteger i = 0; i < [_delegate dynSegmentItemCount]; i ++) {
-        
-    }
+
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     _scrollerView.frameWidth = self.frameWidth;
-    _scrollerView.frameHeight = [_delegate dynSegmentItemHeight];
+    _scrollerView.frameHeight = _segmentHeight;
     
-    if ([_delegate dynSegmentItemCount] <= 5) {
-        _itemWidth = self.frameWidth / [_delegate dynSegmentItemCount];
+    CGFloat itemWidth = 0;
+    
+    if (_items.count <= 5) {
+        itemWidth = _scrollerView.frameWidth / _items.count;
     } else {
-        _itemWidth = self.frameWidth / 5;
+        itemWidth = _scrollerView.frameWidth / 5;
     }
     
-    _scrollerView.contentSize = CGSizeMake(_itemWidth * [_delegate dynSegmentItemCount], _scrollerView.frameHeight);
+    _scrollerView.contentSize = CGSizeMake(itemWidth * _items.count, _segmentHeight);
+    
+    for (DYNSegmentItem *item in _items) {
+        item.frameWidth = itemWidth;
+        item.frameHeight = _segmentHeight;
+        item.frameOriginX = [_items indexOfObject:item] * itemWidth;
+        item.frameCenterY = DYNRulerViewHeight(_scrollerView, 0.5);
+    }
+}
+
+#pragma mark - getter setter
+- (void)setItems:(NSArray<DYNSegmentItem *> *)items {
+    _items = items;
+    for (DYNSegmentItem *item in items) {
+        [_scrollerView addSubview:item];
+    }
+    [self layoutIfNeeded];
+}
+
+- (void)setSegmentHeight:(CGFloat)itemHeight {
+    _segmentHeight = itemHeight;
+    [self layoutIfNeeded];
+}
+
+- (void)setSegmentColor:(UIColor *)itemsColor {
+    _segmentColor = itemsColor;
+    _scrollerView.backgroundColor = itemsColor;
 }
 
 @end
