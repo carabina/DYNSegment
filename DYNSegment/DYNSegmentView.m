@@ -8,11 +8,13 @@
 
 #import "DYNSegmentView.h"
 #import "DYNMacro.h"
+#import "DYNSingleLabel.h"
 
 @interface DYNSegmentView()
 
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, copy) NSMutableArray<UIView*> *itemViews;
 
 @end
 
@@ -21,6 +23,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _itemViews = [[NSMutableArray alloc] initWithCapacity:3];
         [self setupViews];
     }
     return self;
@@ -53,26 +56,51 @@
     
     _scrollerView.contentSize = CGSizeMake(itemWidth * _items.count, _segmentHeight);
     
-    for (DYNSegmentItem *item in _items) {
-        item.frameWidth = itemWidth;
-        item.frameHeight = _segmentHeight;
-        item.frameOriginX = [_items indexOfObject:item] * itemWidth;
-        item.frameCenterY = DYNRulerViewHeight(_scrollerView, 0.5);
+    for (UIView *itemView in _itemViews) {
+        itemView.frameWidth = itemWidth;
+        itemView.frameHeight = _segmentHeight;
+        itemView.frameOriginX = [_itemViews indexOfObject:itemView] * itemWidth;
+        itemView.frameCenterY = DYNRulerViewHeight(_scrollerView, 0.5);
+        
+        for (UIView *label in itemView.subviews) {
+            if ([label isKindOfClass:[DYNSingleLabel class]]) {
+                label.frameCenterX = DYNRulerViewWidth(itemView, 0.5);
+                label.frameCenterY = DYNRulerViewHeight(itemView, 0.5);
+            }
+        }
     }
+}
+
+#pragma mark - private
+- (UIView*)itemView:(DYNSegmentItem*)item {
+    
+    UIView *itemView = [[UIView alloc] init];
+    itemView.backgroundColor = item.backgroundColor;
+    
+    DYNSingleLabel *label = [[DYNSingleLabel alloc] init];
+    [label keepCenterWithTextString:item.title];
+    label.font = item.titleFont;
+    label.textColor = item.titleColor;
+    
+    [itemView addSubview:label];
+    
+    return itemView;
 }
 
 #pragma mark - getter setter
 - (void)setItems:(NSArray<DYNSegmentItem *> *)items {
     _items = items;
     for (DYNSegmentItem *item in items) {
-        [_scrollerView addSubview:item];
+        UIView *itemView = [self itemView:item];
+        [_itemViews addObject:itemView];
+        [_scrollerView addSubview:itemView];
     }
-    [self layoutIfNeeded];
+    [self setNeedsLayout];
 }
 
 - (void)setSegmentHeight:(CGFloat)itemHeight {
     _segmentHeight = itemHeight;
-    [self layoutIfNeeded];
+    [self setNeedsLayout];
 }
 
 - (void)setSegmentColor:(UIColor *)itemsColor {
