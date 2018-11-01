@@ -70,7 +70,7 @@
     }
     
     _symbolView.frameWidth = itemWidth;
-    _symbolView.frameHeight = 10;
+    _symbolView.frameHeight = 5;
     _symbolView.frameEndY = DYNRulerViewHeight(_scrollerView, 1);
 }
 
@@ -112,30 +112,39 @@
     
     // 移动scrollview
     
-    CGFloat symbolCenterX = symbolOriginX + (self.itemWidth / 2);
+    CGPoint symbolPoint = [_scrollerView convertPoint:CGPointMake(symbolOriginX + (self.itemWidth / 2), 0) toView:self];
+    CGFloat symbolCenterX = symbolPoint.x;
+    
     CGFloat scrollerCenterX = DYNRulerViewWidth(_scrollerView, 0.50);
+    CGFloat symbolOffsetX = symbolCenterX - scrollerCenterX;
     
     CGFloat maxOffsetX = _scrollerView.contentSize.width - _scrollerView.frameWidth;
-    
-    CGFloat symbolOffsetX = symbolCenterX - scrollerCenterX;
     
     CGFloat leftOffsetX = _scrollerView.contentOffset.x;
     CGFloat rightOffsetX = maxOffsetX - leftOffsetX;
     
+    CGFloat offsetX = 0;
+    
     if (symbolOffsetX > 0) {
         if (rightOffsetX >= fabs(symbolOffsetX)) {
-            [_scrollerView setContentOffset:CGPointMake(leftOffsetX + fabs(symbolOffsetX), 0) animated:YES];
+            offsetX = leftOffsetX + fabs(symbolOffsetX);
+        } else {
+            offsetX = leftOffsetX + rightOffsetX;
         }
     } else if (symbolOffsetX < 0) {
         if (leftOffsetX >= fabs(symbolOffsetX)) {
-            [_scrollerView setContentOffset:CGPointMake(leftOffsetX - fabs(symbolOffsetX), 0) animated:YES];
+            offsetX = leftOffsetX - fabs(symbolOffsetX);
         }
+    } else {
+        offsetX = leftOffsetX;
     }
     
+    [_scrollerView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
     
-//    NSLog(@"symbolOffsetX=%f", symbolOffsetX);
-//    NSLog(@"offsetX=%f", offsetX);
-//    NSLog(@"maxOffsetX=%f", maxOffsetX);
+    
+    NSLog(@"symbolOffsetX=%f", symbolOffsetX);
+    NSLog(@"leftOffsetX=%f", leftOffsetX);
+    NSLog(@"rightOffsetX=%f", rightOffsetX);
 //    if (fabs(offsetX) > 0 && fabs(offsetX) >= maxOffsetX) {
 //        [_scrollerView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 //    }
