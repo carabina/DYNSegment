@@ -15,6 +15,8 @@
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, copy) NSMutableArray<UIView*> *itemViews;
+@property (nonatomic, strong) UIView *symbolView;
+@property (nonatomic, assign) CGFloat itemWidth;
 
 @end
 
@@ -38,6 +40,9 @@
     _scrollerView.showsVerticalScrollIndicator = NO;
     [self addSubview:_scrollerView];
 
+    _symbolView = [[UIView alloc] init];
+    _symbolView.backgroundColor = DYNColorBlue;
+    [_scrollerView addSubview:_symbolView];
 }
 
 - (void)layoutSubviews {
@@ -46,13 +51,7 @@
     _scrollerView.frameWidth = self.frameWidth;
     _scrollerView.frameHeight = _segmentHeight;
     
-    CGFloat itemWidth = 0;
-    
-    if (_items.count <= 5) {
-        itemWidth = _scrollerView.frameWidth / _items.count;
-    } else {
-        itemWidth = _scrollerView.frameWidth / 5;
-    }
+    CGFloat itemWidth = self.itemWidth;
     
     _scrollerView.contentSize = CGSizeMake(itemWidth * _items.count, _segmentHeight);
     
@@ -69,6 +68,10 @@
             }
         }
     }
+    
+    _symbolView.frameWidth = itemWidth;
+    _symbolView.frameHeight = 10;
+    _symbolView.frameEndY = DYNRulerViewHeight(_scrollerView, 1);
 }
 
 #pragma mark - private
@@ -87,11 +90,74 @@
     return itemView;
 }
 
+- (CGFloat)itemWidth {
+    if (_items.count <= 5) {
+        _itemWidth = _scrollerView.frameWidth / _items.count;
+    } else {
+        _itemWidth = _scrollerView.frameWidth / 5;
+    }
+    return _itemWidth;
+}
+
+- (void)updateSymbol {
+    DYNWeakSelf(weakSelf)
+    
+    // 移动标志
+    
+    CGFloat symbolOriginX = self.itemWidth * self.currentItemIndex;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        weakSelf.symbolView.frameOriginX = symbolOriginX;
+    }];
+    
+    // 移动scrollview
+    
+    CGFloat symbolCenterX = symbolOriginX + (self.itemWidth / 2);
+    CGFloat scrollerCenterX = DYNRulerViewWidth(_scrollerView, 0.50);
+    
+    CGFloat maxOffsetX = _scrollerView.contentSize.width - _scrollerView.frameWidth;
+    
+    CGFloat symbolOffsetX = symbolCenterX - scrollerCenterX;
+    
+    CGFloat leftOffsetX = _scrollerView.contentOffset.x;
+    CGFloat rightOffsetX = maxOffsetX - leftOffsetX;
+    
+    if (symbolOffsetX > 0) {
+        if (rightOffsetX >= fabs(symbolOffsetX)) {
+            [_scrollerView setContentOffset:CGPointMake(leftOffsetX + fabs(symbolOffsetX), 0) animated:YES];
+        }
+    } else if (symbolOffsetX < 0) {
+        if (leftOffsetX >= fabs(symbolOffsetX)) {
+            [_scrollerView setContentOffset:CGPointMake(leftOffsetX - fabs(symbolOffsetX), 0) animated:YES];
+        }
+    }
+    
+    
+//    NSLog(@"symbolOffsetX=%f", symbolOffsetX);
+//    NSLog(@"offsetX=%f", offsetX);
+//    NSLog(@"maxOffsetX=%f", maxOffsetX);
+//    if (fabs(offsetX) > 0 && fabs(offsetX) >= maxOffsetX) {
+//        [_scrollerView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+//    }
+    
+    
+//    CGFloat x = _scrollerView.contentOffset.x;
+//    CGFloat y = _scrollerView.contentOffset.y;
+//    NSLog(@"x=%f", x);
+//    NSLog(@"y=%f", y);
+}
+
 #pragma mark - getter setter
 - (void)setItems:(NSArray<DYNSegmentItem *> *)items {
     _items = items;
     for (DYNSegmentItem *item in items) {
         UIView *itemView = [self itemView:item];
+        itemView.tag = [items indexOfObject:item];
+        
+        // 添加点击事件
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemTap:)];
+        [itemView addGestureRecognizer:tap];
+        
         [_itemViews addObject:itemView];
         [_scrollerView addSubview:itemView];
     }
@@ -106,6 +172,31 @@
 - (void)setSegmentColor:(UIColor *)itemsColor {
     _segmentColor = itemsColor;
     _scrollerView.backgroundColor = itemsColor;
+}
+
+- (void)setSymbolColor:(UIColor *)symbolColor {
+    _symbolColor = symbolColor;
+    _symbolView.backgroundColor = symbolColor;
+}
+
+- (void)setCurrentItemIndex:(NSInteger)currentItemIndex {
+    if (currentItemIndex < 0) {
+        _currentItemIndex = 0;
+    } else if (currentItemIndex < _items.count) {
+        _currentItemIndex = currentItemIndex;
+    } else if (currentItemIndex >= _items.count) {
+        _currentItemIndex = _items.count - 1;
+    }
+    [self setNeedsLayout];
+    
+    [self updateSymbol];
+}
+
+#pragma mark - action
+- (void)itemTap:(UITapGestureRecognizer*)tap {
+    UIView *itemView = tap.view;
+    self.currentItemIndex = itemView.tag;
+    NSLog(@"%ld", itemView.tag);
 }
 
 @end

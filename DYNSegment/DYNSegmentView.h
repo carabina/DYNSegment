@@ -22,7 +22,9 @@
 
 @property (nonatomic, assign) CGFloat segmentHeight;
 @property (nonatomic, strong) UIColor *segmentColor;
+@property (nonatomic, strong) UIColor *symbolColor;
 @property (nonatomic, weak) id<DYNSegmentViewDelegate> delegate;
 @property (nonatomic, copy) NSArray<DYNSegmentItem*> *items;
+@property (nonatomic, assign) NSInteger currentItemIndex;
 
 @end
