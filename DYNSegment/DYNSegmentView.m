@@ -141,19 +141,24 @@
     
     [_scrollerView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
     
+    // 缩放 item view
     
-    NSLog(@"symbolOffsetX=%f", symbolOffsetX);
-    NSLog(@"leftOffsetX=%f", leftOffsetX);
-    NSLog(@"rightOffsetX=%f", rightOffsetX);
-//    if (fabs(offsetX) > 0 && fabs(offsetX) >= maxOffsetX) {
-//        [_scrollerView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-//    }
-    
-    
-//    CGFloat x = _scrollerView.contentOffset.x;
-//    CGFloat y = _scrollerView.contentOffset.y;
-//    NSLog(@"x=%f", x);
-//    NSLog(@"y=%f", y);
+    for (UIView *itemView in _itemViews) {
+        if (_itemViews.count > _currentItemIndex && itemView == _itemViews[_currentItemIndex]) {
+            for (UIView *subView in itemView.subviews) {
+                if ([subView isKindOfClass:[DYNSingleLabel class]]) {
+                    subView.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1);
+                }
+            }
+            continue;
+        }
+        
+        for (UIView *subView in itemView.subviews) {
+            if ([subView isKindOfClass:[DYNSingleLabel class]]) {
+                subView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1);
+            }
+        }
+    }
 }
 
 #pragma mark - getter setter
@@ -196,7 +201,8 @@
     } else if (currentItemIndex >= _items.count) {
         _currentItemIndex = _items.count - 1;
     }
-    [self setNeedsLayout];
+    
+    [self layoutIfNeeded];
     
     [self updateSymbol];
 }
