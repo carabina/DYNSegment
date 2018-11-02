@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, copy) NSMutableArray<UIView*> *itemViews;
-@property (nonatomic, strong) UIView *symbolView;
+@property (nonatomic, strong) UIView *flagView;
 @property (nonatomic, assign) CGFloat itemWidth;
 
 @end
@@ -40,9 +40,9 @@
     _scrollerView.showsVerticalScrollIndicator = NO;
     [self addSubview:_scrollerView];
 
-    _symbolView = [[UIView alloc] init];
-    _symbolView.backgroundColor = DYNColorBlue;
-    [_scrollerView addSubview:_symbolView];
+    _flagView = [[UIView alloc] init];
+    _flagView.backgroundColor = DYNColorBlue;
+    [_scrollerView addSubview:_flagView];
 }
 
 - (void)layoutSubviews {
@@ -69,9 +69,9 @@
         }
     }
     
-    _symbolView.frameWidth = itemWidth;
-    _symbolView.frameHeight = 5;
-    _symbolView.frameEndY = DYNRulerViewHeight(_scrollerView, 1);
+    _flagView.frameWidth = itemWidth;
+    _flagView.frameHeight = 5;
+    _flagView.frameEndY = DYNRulerViewHeight(_scrollerView, 1);
 }
 
 #pragma mark - private
@@ -99,24 +99,24 @@
     return _itemWidth;
 }
 
-- (void)updateSymbol {
+- (void)updateflag {
     DYNWeakSelf(weakSelf)
     
     // 移动标志
     
-    CGFloat symbolOriginX = self.itemWidth * self.currentItemIndex;
+    CGFloat flagOriginX = self.itemWidth * self.currentItemIndex;
     
     [UIView animateWithDuration:0.2 animations:^{
-        weakSelf.symbolView.frameOriginX = symbolOriginX;
+        weakSelf.flagView.frameOriginX = flagOriginX;
     }];
     
     // 移动scrollview
     
-    CGPoint symbolPoint = [_scrollerView convertPoint:CGPointMake(symbolOriginX + (self.itemWidth / 2), 0) toView:self];
-    CGFloat symbolCenterX = symbolPoint.x;
+    CGPoint flagPoint = [_scrollerView convertPoint:CGPointMake(flagOriginX + (self.itemWidth / 2), 0) toView:self];
+    CGFloat flagCenterX = flagPoint.x;
     
     CGFloat scrollerCenterX = DYNRulerViewWidth(_scrollerView, 0.50);
-    CGFloat symbolOffsetX = symbolCenterX - scrollerCenterX;
+    CGFloat flagOffsetX = flagCenterX - scrollerCenterX;
     
     CGFloat maxOffsetX = _scrollerView.contentSize.width - _scrollerView.frameWidth;
     
@@ -125,15 +125,15 @@
     
     CGFloat offsetX = 0;
     
-    if (symbolOffsetX > 0) {
-        if (rightOffsetX >= fabs(symbolOffsetX)) {
-            offsetX = leftOffsetX + fabs(symbolOffsetX);
+    if (flagOffsetX > 0) {
+        if (rightOffsetX >= fabs(flagOffsetX)) {
+            offsetX = leftOffsetX + fabs(flagOffsetX);
         } else {
             offsetX = leftOffsetX + rightOffsetX;
         }
-    } else if (symbolOffsetX < 0) {
-        if (leftOffsetX >= fabs(symbolOffsetX)) {
-            offsetX = leftOffsetX - fabs(symbolOffsetX);
+    } else if (flagOffsetX < 0) {
+        if (leftOffsetX >= fabs(flagOffsetX)) {
+            offsetX = leftOffsetX - fabs(flagOffsetX);
         }
     } else {
         offsetX = leftOffsetX;
@@ -188,9 +188,9 @@
     _scrollerView.backgroundColor = itemsColor;
 }
 
-- (void)setSymbolColor:(UIColor *)symbolColor {
-    _symbolColor = symbolColor;
-    _symbolView.backgroundColor = symbolColor;
+- (void)setFlagColor:(UIColor *)flagColor {
+    _flagColor = flagColor;
+    _flagView.backgroundColor = flagColor;
 }
 
 - (void)setCurrentItemIndex:(NSInteger)currentItemIndex {
@@ -204,7 +204,7 @@
     
     [self layoutIfNeeded];
     
-    [self updateSymbol];
+    [self updateflag];
 }
 
 #pragma mark - action
