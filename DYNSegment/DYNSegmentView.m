@@ -54,6 +54,7 @@
     _collectionView.bounces = NO;
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     [self addSubview:_collectionView];
+    
 }
 
 - (void)layoutSubviews {
@@ -82,7 +83,7 @@
     
     _flagView.frameWidth = itemWidth;
     _flagView.frameHeight = 5;
-    _flagView.frameEndY = DYNRulerViewHeight(_scrollerView, 1);
+    _flagView.frameEndY = _scrollerView.frameHeight - 1;
     
     _collectionView.frameOriginX = 0;
     _collectionView.frameOriginY = _segmentHeight;
@@ -166,6 +167,7 @@
             for (UIView *subView in itemView.subviews) {
                 if ([subView isKindOfClass:[DYNSingleLabel class]]) {
                     subView.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1);
+                    subView.alpha = 1;
                 }
             }
             continue;
@@ -174,6 +176,7 @@
         for (UIView *subView in itemView.subviews) {
             if ([subView isKindOfClass:[DYNSingleLabel class]]) {
                 subView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1);
+                subView.alpha = 0.5;
             }
         }
     }
