@@ -25,6 +25,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _segmentHeight = 50;
+        _segmentColor = DYNColorWhite;
+        _flagColor = DYNColorRed;
+        _currentItemIndex = 0;
         _itemViews = [[NSMutableArray alloc] initWithCapacity:3];
         [self setupViews];
     }
@@ -38,10 +42,12 @@
     _scrollerView.bounces = NO;
     _scrollerView.showsHorizontalScrollIndicator = NO;
     _scrollerView.showsVerticalScrollIndicator = NO;
+    _scrollerView.backgroundColor = _segmentColor;
     [self addSubview:_scrollerView];
 
     _flagView = [[UIView alloc] init];
-    _flagView.backgroundColor = DYNColorBlue;
+    _flagView.backgroundColor = _flagColor;
+    _flagView.layer.zPosition = CGFLOAT_MAX;
     [_scrollerView addSubview:_flagView];
     
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[self collectionViewlayout:0 height:0]];
@@ -83,7 +89,7 @@
     
     _flagView.frameWidth = itemWidth;
     _flagView.frameHeight = 5;
-    _flagView.frameEndY = _scrollerView.frameHeight - 1;
+    _flagView.frameEndY = _scrollerView.frameHeight;
     
     _collectionView.frameOriginX = 0;
     _collectionView.frameOriginY = _segmentHeight;
