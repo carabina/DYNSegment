@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "DYNSegmentItem.h"
 #import "DYNSegmentView.h"
+#import "ViewController1.h"
 
 @interface ViewController () <DYNSegmentViewDelegate>
 - (IBAction)btn0Action:(id)sender;
@@ -23,8 +25,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    DYNSegmentView *segView = [[DYNSegmentView alloc] initWithFrame:self.view.bounds delegate:self];
-    [self.view addSubview:segView];
+    DYNSegmentItem *item0 = [[DYNSegmentItem alloc] init];
+    item0.title = @"00000";
+    item0.titleFont = [UIFont systemFontOfSize:10];
+    
+    DYNSegmentItem *item1 = [[DYNSegmentItem alloc] init];
+    item1.title = @"11111";
+    item1.titleFont = [UIFont systemFontOfSize:10];
+    
+    DYNSegmentItem *item2 = [[DYNSegmentItem alloc] init];
+    item2.title = @"2222";
+    
+    DYNSegmentItem *item3 = [[DYNSegmentItem alloc] init];
+    item3.title = @"3333";
+    
+    DYNSegmentItem *item4 = [[DYNSegmentItem alloc] init];
+    item4.title = @"44444";
+    item4.titleColor = [UIColor redColor];
+    
+    DYNSegmentItem *item5 = [[DYNSegmentItem alloc] init];
+    item5.title = @"55555";
+    
+    DYNSegmentItem *item6 = [[DYNSegmentItem alloc] init];
+    item6.title = @"6666";
+    
+    DYNSegmentItem *item7 = [[DYNSegmentItem alloc] init];
+    item7.title = @"77777";
+    
+    DYNSegmentItem *item8 = [[DYNSegmentItem alloc] init];
+    item8.title = @"8888";
+    
+    DYNSegmentView *sv = [[DYNSegmentView alloc] initWithFrame:self.view.bounds];
+    sv.delegate = self;
+    sv.items = @[item0, item1, item2, item3, item4, item5, item6, item7, item8];
+    sv.segmentHeight = 50;
+    sv.segmentColor = [UIColor whiteColor];
+    sv.currentItemIndex = 10;
+    [self.view addSubview:sv];
+    
 }
 
 
@@ -34,20 +72,15 @@
 }
 
 # pragma mark - delegate
-- (NSInteger)dynSegmentItemCount {
-    return 6;
-}
-
-- (CGFloat)dynSegmentItemHeight {
-    return 50;
-}
-
-- (DYNSegmentItem*)dynSegmentItemAtIndex:(NSInteger)index {
-    return nil;
-}
-
 - (UIViewController*)dynSegmentPageAtIndex:(NSInteger)index {
-    return nil;
+    ViewController1 *vc = [[ViewController1 alloc] init];
+    vc.desc = [NSString stringWithFormat:@"页面%ld", index];
+    if ((index % 2) == 0) {
+        vc.view.backgroundColor = [UIColor cyanColor];
+    } else {
+        vc.view.backgroundColor = [UIColor magentaColor];
+    }
+    return vc;
 }
 
 #pragma mark - action
