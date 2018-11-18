@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 #import "DYNSegmentItem.h"
-#import "DYNSegmentView.h"
+#import "DYNSegmentPage.h"
 #import "ViewController1.h"
 
-@interface ViewController () <DYNSegmentViewDelegate>
+@interface ViewController () <DYNSegmentPageDelegate>
 - (IBAction)btn0Action:(id)sender;
 - (IBAction)btn1Action:(id)sender;
 - (IBAction)btn2Action:(id)sender;
@@ -55,7 +55,7 @@
     DYNSegmentItem *item8 = [[DYNSegmentItem alloc] init];
     item8.title = @"8888";
     
-    DYNSegmentView *sv = [[DYNSegmentView alloc] initWithFrame:self.view.bounds];
+    DYNSegmentPage *sv = [[DYNSegmentPage alloc] initWithFrame:self.view.bounds];
     sv.delegate = self;
     sv.items = @[item0, item1, item2, item3, item4, item5, item6, item7, item8];
     sv.segmentHeight = 50;

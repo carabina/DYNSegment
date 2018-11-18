@@ -1,0 +1,16 @@
+PODS:
+  - DYNCore (0.0.3)
+
+DEPENDENCIES:
+  - DYNCore
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DYNCore
+
+SPEC CHECKSUMS:
+  DYNCore: b39e4c10a4a12ddede0b876a028538eaf549497c
+
+PODFILE CHECKSUM: b77287d082209fa6aa396903d0c5bbaa7fd3db4f
+
+COCOAPODS: 1.5.3
