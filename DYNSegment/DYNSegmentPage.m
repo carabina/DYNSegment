@@ -6,11 +6,11 @@
 //  Copyright © 2018年 devyuan. All rights reserved.
 //
 
-#import "DYNSegmentView.h"
+#import "DYNSegmentPage.h"
 #import "DYNMacro.h"
 #import "DYNSingleLabel.h"
 
-@interface DYNSegmentView() <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
+@interface DYNSegmentPage() <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation DYNSegmentView
+@implementation DYNSegmentPage
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

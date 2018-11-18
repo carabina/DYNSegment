@@ -10,16 +10,23 @@
 #import "DYNViewProtocol.h"
 #import "DYNSegmentItem.h"
 
-@class DYNSegmentView;
+@class DYNSegmentPage;
 
 @protocol DYNSegmentViewDelegate
 
+/**
+ 定义滑动到 index 位置时要显示的页面
+
+ @param index 位置
+ @return 要显示的页面
+ */
 - (UIViewController*)dynSegmentPageAtIndex:(NSInteger)index;
 
 @end
 
-@interface DYNSegmentView : UIView <DYNViewProtocol>
+@interface DYNSegmentPage : UIView <DYNViewProtocol>
 
+/// 
 @property (nonatomic, assign) CGFloat segmentHeight;
 @property (nonatomic, strong) UIColor *segmentColor;
 @property (nonatomic, strong) UIColor *flagColor;
