@@ -137,30 +137,35 @@
     
     // 移动scrollview
     
+    // 算出当前标志的中点在 scrollview 的位置
     CGPoint flagPoint = [_scrollerView convertPoint:CGPointMake(flagOriginX + (self.itemWidth / 2), 0) toView:self];
     CGFloat flagCenterX = flagPoint.x;
     
+    // 算出当前标志的中点和 scrollview 的中点的距离
     CGFloat scrollerCenterX = DYNRulerViewWidth(_scrollerView, 0.50);
     CGFloat flagOffsetX = flagCenterX - scrollerCenterX;
     
+    // 算出 scrollview 最多能滑动多远
     CGFloat maxOffsetX = _scrollerView.contentSize.width - _scrollerView.frameWidth;
     
+    // scrollview 当前左边的 offset
     CGFloat leftOffsetX = _scrollerView.contentOffset.x;
+    // scrollview 当前右边的 offset
     CGFloat rightOffsetX = maxOffsetX - leftOffsetX;
     
     CGFloat offsetX = 0;
     
-    if (flagOffsetX > 0) {
-        if (rightOffsetX >= fabs(flagOffsetX)) {
+    if (flagOffsetX > 0) { // 要往左滑动
+        if (rightOffsetX >= fabs(flagOffsetX)) { // 右边 offset 足够
             offsetX = leftOffsetX + fabs(flagOffsetX);
-        } else {
+        } else { // 右边 offset 不足
             offsetX = leftOffsetX + rightOffsetX;
         }
-    } else if (flagOffsetX < 0) {
-        if (leftOffsetX >= fabs(flagOffsetX)) {
+    } else if (flagOffsetX < 0) { // 要往右滑动
+        if (leftOffsetX >= fabs(flagOffsetX)) { // 左边 offset 足够
             offsetX = leftOffsetX - fabs(flagOffsetX);
         }
-    } else {
+    } else { // 不滑动
         offsetX = leftOffsetX;
     }
     
@@ -169,6 +174,7 @@
     // 缩放 item view
     
     for (UIView *itemView in _itemViews) {
+        // 放大当前标签
         if (_itemViews.count > index && itemView == _itemViews[index]) {
             for (UIView *subView in itemView.subviews) {
                 if ([subView isKindOfClass:[DYNSingleLabel class]]) {
@@ -179,6 +185,7 @@
             continue;
         }
         
+        // 缩小其他标签
         for (UIView *subView in itemView.subviews) {
             if ([subView isKindOfClass:[DYNSingleLabel class]]) {
                 subView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1);

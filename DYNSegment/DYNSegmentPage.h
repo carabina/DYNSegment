@@ -12,10 +12,10 @@
 
 @class DYNSegmentPage;
 
-@protocol DYNSegmentViewDelegate
+@protocol DYNSegmentPageDelegate
 
 /**
- 定义滑动到 index 位置时要显示的页面
+ 定义要显示的页面，滑动或点击 index 位置时显示
 
  @param index 位置
  @return 要显示的页面
@@ -24,14 +24,24 @@
 
 @end
 
+
+/**
+ 自定义的可滑动的标签页；
+ 此标签页包含标签和页面；
+ */
 @interface DYNSegmentPage : UIView <DYNViewProtocol>
 
-/// 
+/// 定义标签的高度，默认 50
 @property (nonatomic, assign) CGFloat segmentHeight;
+/// 定义标签的背景颜色，默认白色
 @property (nonatomic, strong) UIColor *segmentColor;
+/// 定义标签的标志颜色，默认红色
 @property (nonatomic, strong) UIColor *flagColor;
-@property (nonatomic, weak) id<DYNSegmentViewDelegate> delegate;
+/// 定义标签的代理
+@property (nonatomic, weak) id<DYNSegmentPageDelegate> delegate;
+/// 定义一系列标签，DYNSegmentItem 用来定义标签样式
 @property (nonatomic, copy) NSArray<DYNSegmentItem*> *items;
+/// 当前标签页 index，设置此参数可跳转到相应标签页
 @property (nonatomic, assign) NSInteger currentItemIndex;
 
 @end
