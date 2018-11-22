@@ -27,11 +27,9 @@
     
     DYNSegmentItem *item0 = [[DYNSegmentItem alloc] init];
     item0.title = @"00000";
-    item0.titleFont = [UIFont systemFontOfSize:10];
     
     DYNSegmentItem *item1 = [[DYNSegmentItem alloc] init];
     item1.title = @"11111";
-    item1.titleFont = [UIFont systemFontOfSize:10];
     
     DYNSegmentItem *item2 = [[DYNSegmentItem alloc] init];
     item2.title = @"2222";
@@ -41,28 +39,31 @@
     
     DYNSegmentItem *item4 = [[DYNSegmentItem alloc] init];
     item4.title = @"44444";
-    item4.titleColor = [UIColor redColor];
     
     DYNSegmentItem *item5 = [[DYNSegmentItem alloc] init];
     item5.title = @"55555";
     
     DYNSegmentItem *item6 = [[DYNSegmentItem alloc] init];
+//    item6.titleColor = [UIColor redColor];
     item6.title = @"6666";
     
     DYNSegmentItem *item7 = [[DYNSegmentItem alloc] init];
+//    item7.titleFont = [UIFont systemFontOfSize:10];
     item7.title = @"77777";
     
     DYNSegmentItem *item8 = [[DYNSegmentItem alloc] init];
     item8.title = @"8888";
+//    item8.backgroundColor = [UIColor lightGrayColor];
     
-    DYNSegmentPage *sv = [[DYNSegmentPage alloc] initWithFrame:self.view.bounds];
-    sv.delegate = self;
-    sv.items = @[item0, item1, item2, item3, item4, item5, item6, item7, item8];
-    sv.segmentHeight = 50;
-    sv.segmentColor = [UIColor whiteColor];
-    sv.currentItemIndex = 10;
-    [self.view addSubview:sv];
+    NSArray *items = @[item0, item1, item2, item3, item4, item5, item6, item7, item8];
     
+    DYNSegmentPage *segmentPage = [[DYNSegmentPage alloc] initWithFrame:self.view.bounds items:items delegate:self];
+//    segmentPage.segmentHeight = 50;
+//    segmentPage.segmentColor = [UIColor whiteColor];
+//    segmentPage.currentItemIndex = 10;
+//    segmentPage.flagColor = [UIColor blueColor];
+    
+    [self.view addSubview:segmentPage];
 }
 
 
