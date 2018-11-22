@@ -7,7 +7,24 @@
 //
 
 #import "DYNSegmentItem.h"
+#import <DYNCore/DYNMacro.h>
 
 @implementation DYNSegmentItem
+
+- (NSString *)title {
+    return DYNStrClearNil(_title);
+}
+
+- (UIFont *)titleFont {
+    return _titleFont ? : [UIFont systemFontOfSize:15];
+}
+
+- (UIColor *)titleColor {
+    return _titleColor? : DYNColorBlack;
+}
+
+- (UIColor *)backgroundColor {
+    return _backgroundColor? : DYNColorWhite;
+}
 
 @end

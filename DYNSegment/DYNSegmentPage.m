@@ -12,6 +12,10 @@
 
 @interface DYNSegmentPage() <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
 
+/// 定义一系列标签，DYNSegmentItem 用来定义标签样式
+@property (nonatomic, copy) NSArray<DYNSegmentItem*> *items;
+/// 定义标签的代理
+@property (nonatomic, weak) id<DYNSegmentPageDelegate> delegate;
 @property (nonatomic, strong) UIScrollView *scrollerView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, copy) NSMutableArray<UIView*> *itemViews;
@@ -31,6 +35,17 @@
         _currentItemIndex = 0;
         _itemViews = [[NSMutableArray alloc] initWithCapacity:3];
         [self setupViews];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray<DYNSegmentItem*> *)items delegate:(id<DYNSegmentPageDelegate>)delegate {
+    self = [self initWithFrame:frame];
+    if (self) {
+        self.items = items;
+        _delegate = delegate;
+        // 设置默认的 index 0
+        self.currentItemIndex = 0;
     }
     return self;
 }
@@ -60,7 +75,6 @@
     _collectionView.bounces = NO;
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     [self addSubview:_collectionView];
-    
 }
 
 - (void)layoutSubviews {

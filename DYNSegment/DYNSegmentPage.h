@@ -8,7 +8,10 @@
 // 0.0.2
 // 2018.11.18
 // 代码初版完成
-#define DYNSegmentPageVersion @"0.0.2"
+// 0.0.3
+// 2018.11.22
+// 修改初始化方法
+#define DYNSegmentPageVersion @"0.0.3"
 
 #import <UIKit/UIKit.h>
 #import "DYNViewProtocol.h"
@@ -41,11 +44,9 @@
 @property (nonatomic, strong) UIColor *segmentColor;
 /// 定义标签的标志颜色，默认红色
 @property (nonatomic, strong) UIColor *flagColor;
-/// 定义标签的代理
-@property (nonatomic, weak) id<DYNSegmentPageDelegate> delegate;
-/// 定义一系列标签，DYNSegmentItem 用来定义标签样式
-@property (nonatomic, copy) NSArray<DYNSegmentItem*> *items;
-/// 当前标签页 index，设置此参数可跳转到相应标签页
+/// 当前标签页
 @property (nonatomic, assign) NSInteger currentItemIndex;
+
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray<DYNSegmentItem*> *)items delegate:(id<DYNSegmentPageDelegate>)delegate;
 
 @end
