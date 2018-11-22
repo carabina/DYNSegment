@@ -5,6 +5,10 @@
 //  Created by huangsy on 2018/10/28.
 //  Copyright © 2018年 devyuan. All rights reserved.
 //
+// 0.0.2
+// 2018.11.18
+// 代码初版完成
+#define DYNSegmentPageVersion @"0.0.2"
 
 #import <UIKit/UIKit.h>
 #import "DYNViewProtocol.h"
