@@ -6,7 +6,9 @@
 
 ## Description
 
-iOS segment page, that page can slide left or right and it's flag can slide follow the page. It is easy to use.
+iOS segment page, that page can slide left or right and it's segment flag can slide follow the page. It is easy to use.
+
+![001.png](/Screenshot/001.gif)
 
 ## How to use
 
