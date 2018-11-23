@@ -6,14 +6,14 @@
 
 ## Description
 
-A iOS segment page, that page can slide left or right and it's flag can slide follow the page. It is easy to use.
+iOS segment page, that page can slide left or right and it's flag can slide follow the page. It is easy to use.
 
 ## How to use
 
-Installation with CocoaPods：`pod ''`
+Installation with CocoaPods：`pod 'DYNSegment'`
 
 ```
-#import <>
+#import <DYNSegment/DYNSegmentPage.h>
 ```
 
 ```
